@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="./js/app.js" type="module"></script>
+    <title>Board Task</title>
+</head>
+
+<body>
+    <div class="header">
+
+    </div>
+    <div class="main">
+        <div class="board" id="boardTodo">
+            <div class="board__header">
+                <div class="board__header-title">TODO:</div>
+                <div class="board__header-counter">Counter: 0</div>
+            </div>
+            <div class="border__tasks" id="todoCards">
+
+            </div>
+            <button class="addTask" id="addTodo">Add Todo</button>
+        </div>
+        <div class="board" id="boardInProgress">
+            <div class="board__header">
+                <div class="board__header-title">in progress:</div>
+                <div class="board__header-counter">Counter: 0</div>
+            </div>
+            <div class="border__tasks" id="progressCards">
+
+            </div>
+        </div>
+        <div class="board" id="boardDone">
+            <div class="board__header">
+                <div class="board__header-title">done:</div>
+                <div class="board__header-counter">Counter: 0</div>
+            </div>
+            <div class="border__tasks" id="doneCards">
+
+            </div>
+            <button class="addTask">Delete All</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup__body">
+            <form action="#" class="popup__content">
+                <input type="text" placeholder="Title" class="popup__tittle">
+                <textarea placeholder="Description" class="popup__text"></textarea>
+                <div class="popup__navigation">
+                    <select class="popup__drop-menu"></select>
+                    <div class="popup__buttons">
+                        <button id="popupCansel" class="my-button-popup">cansel</button>
+                        <button id="popupConfirm" class="my-button-popup">confirm</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <template id="templateTask">
+        <div class="task">
+            <div class="task__container">
+                <h2 class="task__title">title</h2>
+                <div class="task__buttons-container">
+                    <button class="task__edit">edit</button>
+                    <button class="task__delete">delete</button>
+                </div>
+            </div>
+            <div class="task__container">
+                <p class="task__desckription">desckription</p>
+                <button class="task__move">></button>
+            </div>
+            <div class="task__container">
+                <div class="task__implementer">implementer</div>
+                <p class="task__timecreate">dateCreatePost</p>
+            </div>
+        </div>
+    </template>
+
+
+
+</body>
+
+</html>
