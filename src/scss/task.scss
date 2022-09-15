@@ -1,0 +1,82 @@
+$task-text-color: #333333;
+$text-size: 16px;
+$title-size: 20px;
+$task-content-padding: 15px 10px;
+$task-shadow: inset rgba(0, 0, 0, .6) 0 -3px 8px,
+    inset rgba(252, 255, 255, .7) 0 3px 8px,
+    rgba(0, 0, 0, .8) 0 3px 8px -3px;
+$task-margin: 15px 0px 0 0px;
+$title-shadow: 1px 1px white, 2px 2px tomato;
+
+
+.task {
+    width: 100%;
+    cursor: default;
+    position: relative;
+    padding: $task-content-padding;
+    color: $task-text-color;
+    box-shadow: $task-shadow;
+
+    &+& {
+        margin: $task-margin;
+    }
+}
+
+.task__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & + & {
+        margin: $task-margin;
+    }
+}
+
+.task__title {
+    flex: 2;
+    max-width: 50%;
+    font-size: $title-size;
+    display: inline-block;
+    text-transform: uppercase;
+    text-shadow:
+        1px 1px white,
+        2px 2px #777;
+    color: $task-text-color;
+    transition: text-shadow 0.5s linear,
+        color 0.5s linear;
+
+    &:hover {
+        text-shadow: $title-shadow;
+        color: $button-task-hover-color;
+    }
+}
+
+.task__edit {
+    text-transform: uppercase;
+    flex: 1;
+}
+
+.task__delete {
+    text-transform: uppercase;
+    flex: 1;
+}
+
+.task__desckription {
+    flex: 10;
+}
+
+.task__move {
+    flex: 1;
+}
+
+.task__implementer {
+    flex: 1;
+}
+
+.task__timecreate {
+    flex: 1;
+    font-weight: 700;
+    text-align: right;
+    font-size: $text-size;
+    line-height: $text-size;
+}
