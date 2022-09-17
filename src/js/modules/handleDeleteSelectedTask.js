@@ -1,5 +1,5 @@
-import { tasks } from './data.js'
-import { renderTasks } from './renderTasks.js'
+import { tasks } from '../helpers/data.js'
+import { renderTasks } from '../helpers/renderTasks.js'
 
 function handleDeleteSelectedTask(event) {
     event.preventDefault()

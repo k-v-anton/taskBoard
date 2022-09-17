@@ -1,7 +1,7 @@
-import { tasks, storageUsers } from './data.js'
-import { renderTasks } from './renderTasks.js'
-import { toggleActiveClass } from './toggleActiveClass.js'
-import { $ } from './selector.js'
+import { tasks, storageUsers } from '../helpers/data.js'
+import { renderTasks } from '../helpers/renderTasks.js'
+import { toggleActiveClass } from '../helpers/toggleActiveClass.js'
+import { $ } from '../helpers/selector.js'
 
 function handleConfirmDeleteAiiTasks(event) {
     event.preventDefault()

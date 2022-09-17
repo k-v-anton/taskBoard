@@ -1,5 +1,5 @@
-import { $ } from './selector.js'
-import { toggleActiveClass } from './toggleActiveClass.js'
+import { $ } from '../helpers/selector.js'
+import { toggleActiveClass } from '../helpers/toggleActiveClass.js'
 
 function handleDeleteAll(event) {
     event.preventDefault()

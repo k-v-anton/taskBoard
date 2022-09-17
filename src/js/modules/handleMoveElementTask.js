@@ -1,7 +1,7 @@
-import { tasks } from './data.js'
-import { renderTasks } from './renderTasks.js'
-import { changeBoard } from './changeBoard.js'
-import { toggleActiveClass } from './toggleActiveClass.js'
+import { tasks } from '../helpers/data.js'
+import { renderTasks } from '../helpers/renderTasks.js'
+import { changeBoard } from '../helpers/changeBoard.js'
+import { toggleActiveClass } from '../helpers/toggleActiveClass.js'
 
 function handleMoveElementTask(event) {
     event.preventDefault()

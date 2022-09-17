@@ -1,4 +1,4 @@
-import { toggleActiveClass } from './toggleActiveClass.js'
+import { toggleActiveClass } from '../helpers/toggleActiveClass.js'
 
 function handleCanselDeleteAllTask(element) {
     event.preventDefault()

@@ -1,11 +1,11 @@
-import { renderTasks } from './renderTasks.js'
-import { tasks, addTask } from './data.js'
-import { toggleActiveClass } from './toggleActiveClass.js'
-import { $ } from './selector.js'
-import { dateCreateTask } from './dateCreateTask.js'
+import { renderTasks } from '../helpers/renderTasks.js'
+import { tasks, addTask } from '../helpers/data.js'
+import { toggleActiveClass } from '../helpers/toggleActiveClass.js'
+import { $ } from '../helpers/selector.js'
+import { dateCreateTask } from '../helpers/dateCreateTask.js'
 
 function handleCreateTask() {
-    const popupElement = $('#popup')
+    const popupElement = $('#popupCreateTask')
     toggleActiveClass(popupElement)
 
     const dateCreate = new Date()
@@ -19,7 +19,7 @@ function handleCreateTask() {
     }
 
     addTask(newTask)
-    $('#popup').querySelector('.popup__content').reset()
+    $('#popupCreateTask').querySelector('.popup__content').reset()
     renderTasks(tasks)
 }
 

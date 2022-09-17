@@ -1,7 +1,7 @@
-import { $ } from './selector.js'
-import { tasks } from './data.js'
-import { renderTasks } from './renderTasks.js'
-import { toggleActiveClass } from './toggleActiveClass.js'
+import { $ } from '../helpers/selector.js'
+import { tasks } from '../helpers/data.js'
+import { renderTasks } from '../helpers/renderTasks.js'
+import { toggleActiveClass } from '../helpers/toggleActiveClass.js'
 
 function handleConfirmChangeTask(event) {
     event.preventDefault()
