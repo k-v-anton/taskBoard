@@ -6,6 +6,7 @@ import { dateCreateTask } from '../helpers/dateCreateTask.js'
 
 function handleCreateTask() {
     const popupElement = $('#popupCreateTask')
+
     toggleActiveClass(popupElement)
 
     const dateCreate = new Date()
@@ -13,8 +14,8 @@ function handleCreateTask() {
         id: Date.parse(dateCreate),
         title: popupElement.querySelector('.popup__tittle').value,
         text: popupElement.querySelector('.popup__text').value,
+        user: popupElement.querySelector('.popup__drop-menu').value,
         timeCreate: dateCreateTask(dateCreate),
-        user: $('.popup__drop-menu').value,
         board: 1
     }
 
