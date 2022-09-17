@@ -1,6 +1,6 @@
 import { $ } from './selector.js'
 import { counterTasks } from './counterTasks.js'
-import { colorsBGTasks } from './data.js'
+import { colorsTaskTodo, colorsTaskInProgress } from './data.js'
 
 function renderTasks(data) {
     const boardTodo = $('#todoCards')
@@ -17,8 +17,6 @@ function renderTasks(data) {
             .querySelector('.task')
             .cloneNode(true)
 
-        newTask.setAttribute('style', `background-color: ${colorsBGTasks[Math.floor(Math.random() * 10)]}`)
-
         const title = newTask.querySelector('.task__title')
         const description = newTask.querySelector('.task__desckription')
         const timeCreate = newTask.querySelector('.task__timecreate')
@@ -29,6 +27,21 @@ function renderTasks(data) {
         description.textContent = `${element.text}`
         timeCreate.textContent = `${element.timeCreate}`
         implementer.textContent = `${element.user}`
+
+        switch (true) {
+            case element.board === 1:
+                newTask.setAttribute('style', `background-color: ${colorsTaskTodo[Math.floor(Math.random() * 10)]}`)
+                break
+            case element.board === 2:
+                newTask.setAttribute('style', `background-color: ${colorsTaskInProgress[Math.floor(Math.random() * 10)]}`)
+                break
+            case element.board === 3:
+                newTask.setAttribute('style', 'background-color: #c0c0c0')
+                break
+
+            default:
+                break
+        }
 
         if (element.board == 1) {
             boardTodo.append(newTask)
