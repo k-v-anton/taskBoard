@@ -48,6 +48,7 @@
         </div>
         <span class="header__clock" id="clock"></span>
     </header>
+
     <main class="main">
         <div class="board" id="boardTodo">
             <div class="board__header">
@@ -76,7 +77,7 @@
             <div class="border__tasks" id="doneCards">
 
             </div>
-            <button class="addTask">Delete All</button>
+            <button class="addTask" id="deleteAll">Delete All</button>
         </div>
     </main>
 
@@ -97,12 +98,11 @@
         </div>
     </div>
 
-
     <div class="popup" id="popup">
         <div class="popup__body">
             <form action="#" class="popup__content">
-                <input type="text" placeholder="Title" class="popup__tittle">
-                <textarea placeholder="Description" class="popup__text"></textarea>
+                <input type="text" placeholder="Title" class="popup__tittle" value="Title">
+                <textarea placeholder="Description" class="popup__text">Description</textarea>
                 <div class="popup__navigation">
                     <select class="popup__drop-menu"></select>
                     <div class="popup__buttons">
@@ -111,6 +111,32 @@
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <div id="popupWarningDeleteAll" class="popup-warning">
+        <div class="popup-warning__container">
+            <input type="hidden" class="popup-warning-input-hiden">
+            <p class="popup-warning__warning">Warning !</p>
+            <p class="popup-warning__text">Are you sure you want to delete all completed tasks?</p>
+            <div class="popup-warning__buttons">
+                <button class="popup-warning__buttons_cansel task-button">cancel</button>
+                <button class="popup-warning__buttons_confirm task-button">confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popupWarningMove" class="popup-warning">
+        <div class="popup-warning__container">
+            <input type="hidden" class="popup-warning-input-hiden-id">
+            <input type="hidden" class="popup-warning-input-hiden-et">
+
+            <p class="popup-warning__warning">Warning !</p>
+            <p class="popup-warning__text">Are you sure you want to move the task?</p>
+            <div class="popup-warning__buttons">
+                <button class="popup-warning__buttons_cansel task-button">cancel</button>
+                <button class="popup-warning__buttons_confirm task-button">confirm</button>
+            </div>
         </div>
     </div>
 

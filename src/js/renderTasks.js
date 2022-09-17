@@ -34,8 +34,20 @@ function renderTasks(data) {
             boardTodo.append(newTask)
         } else if (element.board == 2) {
             boardProgress.append(newTask)
+            const backElement = newTask.querySelector('.task__edit')
+            backElement.textContent = 'back'
+            const complitedElement = newTask.querySelector('.task__delete')
+            complitedElement.textContent = 'complited'
+            const moveElement = newTask.querySelector('.task__move')
+            moveElement.setAttribute('style', 'display: none')
         } else if (element.board == 3) {
             boardDone.append(newTask)
+            const backElement = newTask.querySelector('.task__edit')
+            backElement.setAttribute('style', 'display: none')
+            const deleteElement = newTask.querySelector('.task__delete')
+            deleteElement.textContent = 'delete'
+            const moveElement = newTask.querySelector('.task__move')
+            moveElement.setAttribute('style', 'display: none')
         }
     })
 
