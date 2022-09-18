@@ -1,0 +1,35 @@
+$scroll-track-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.2) inset;
+$scroll-thumb-color: rgba(29, 9, 206, 0.8) radial-gradient(circle at 50% 0, rgba(29, 9, 206, 0.4), rgba(29, 9, 206, 0.25));
+$scroll-thumb-radius: 14px;
+$scroll-thumb-size: 8px;
+$body-width: 100vw;
+$body-height: 100vh;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scrollbar-width: thin;
+
+    ::-webkit-scrollbar {
+        width: $scroll-thumb-size;
+        height: $scroll-thumb-size;
+    }
+
+    ::-webkit-scrollbar-track {
+        box-shadow: $scroll-track-shadow;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $scroll-thumb-color;
+        border-radius: $scroll-thumb-radius;
+    }
+}
+
+body {
+    width: $body-width;
+    height: $body-height;
+    display: flex;
+    flex-direction: column;
+}

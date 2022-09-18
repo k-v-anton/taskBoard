@@ -1,10 +1,10 @@
 import { toggleActiveClass } from '../helpers/toggleActiveClass.js'
 
-function handleCanselDeleteAllTask(element) {
+function handleCanselDeleteAllTask(event) {
     event.preventDefault()
 
     if (event.target.textContent.toUpperCase() === 'CANCEL') {
-        toggleActiveClass(element)
+        toggleActiveClass(event.target.closest('.popup-warning'))
     }
 }
 

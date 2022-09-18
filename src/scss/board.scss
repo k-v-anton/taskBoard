@@ -1,0 +1,66 @@
+$board-height: 100%;
+$board-width: 31%;
+$board-margin-board: 0 0 0 20px;
+$board-navigation-height: 8%;
+$board-padding: 10px;
+$board-navigation-color: #1d09ce radial-gradient(circle at 50% 0, rgba(29, 9, 206, 0.65), rgba(29, 9, 206, 0.35));
+$board-navigation-shadow:
+    inset rgba(0, 0, 0, .6) 0 -3px 8px,
+    inset rgba(252, 255, 255, .7) 0 3px 8px,
+    rgba(0, 0, 0, .8) 0 3px 8px -3px;
+$board-tasks-shadow: inset 2px 2px 5px #9a938c, 1px 1px 5px #ffffff;
+$board-text-color: #ffffff;
+$bord-text-shadow: 1px 1px #ffffff, 2px 2px #ff6347;
+$board-text-color-hover: #ff0000;
+
+.board {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: $board-height;
+    max-width: $board-width;
+
+    & + & {
+        margin: $board-margin-board;
+    }
+}
+
+.board__header {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $board-navigation-height;
+    padding: $board-padding;
+    background: $board-navigation-color;
+    box-shadow: $board-navigation-shadow;
+    color: $board-text-color;
+}
+
+.border__tasks {
+    flex: 1;
+    overflow-y: auto;
+    padding: $board-padding;
+    box-shadow: $board-tasks-shadow;
+}
+
+.button-board {
+    text-transform: uppercase;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $board-navigation-height;
+    padding: $board-padding;
+    background: $board-navigation-color;
+    box-shadow: $board-navigation-shadow;
+    color: $board-text-color;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+
+    &:hover {
+        font-weight: 900;
+        color: $board-text-color-hover;
+        text-shadow: $bord-text-shadow;
+    }
+}

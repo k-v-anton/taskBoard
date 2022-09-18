@@ -4,11 +4,13 @@ $button-task-border: 2px solid $button-task-text-color;
 $button-task-border-hover: 2px solid $button-task-hover-color;
 $button-task-text-size: 14px;
 $buttons-margin: 0 0 0 10px;
-$button-task-shadow: 1px 1px 0 $button-task-text-color,
+$button-task-shadow:
+    1px 1px 0 $button-task-text-color,
     -1px -1px 0 $button-task-text-color,
     -1px 1px 0 $button-task-text-color,
     1px -1px 0 $button-task-text-color;
-$button-task-shadow-hower: 7px 3px 0 $button-task-text-color,
+$button-task-shadow-hower:
+    7px 3px 0 $button-task-text-color,
     -7px -3px 0 $button-task-text-color;
 
 .task-button {
