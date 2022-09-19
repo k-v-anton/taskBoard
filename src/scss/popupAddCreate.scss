@@ -64,21 +64,30 @@ $popup-add-color: rgba(0, 0, 0, 0.8);
     justify-content: space-between;
     align-items: center;
 
+
+
     .popup__drop-menu {
         cursor: pointer;
         border: 2px solid #333333;
         padding: 1px 10px;
+        background-color: transparent;
+        outline: none;
         box-shadow:
-            1px 1px 0 #333,
-            -1px -1px 0 #333,
-            -1px 1px 0 #333,
-            1px -1px 0 #333;
-        transition: box-shadow 0.3s linear;
+             1px 1px 0 #333333,
+            -1px -1px 0 #333333,
+            -1px 1px 0 #333333,
+            1px -1px 0 #333333;
+        transition:  box-shadow .3s linear;
+        text-transform: capitalize;
 
         &:hover {
             box-shadow:
-                7px 3px 0 #333,
-                -7px -3px 0 #333;
+                7px 3px 0 #333333,
+                -7px -3px 0 #333333;
+        }
+
+        &::-ms-expand {
+            display: none;
 
         }
     }

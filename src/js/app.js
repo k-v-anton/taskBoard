@@ -10,7 +10,7 @@ import { handleMoveTask } from './modules/handleMoveTask.js'
 import { handleDeleteAll } from './modules/handleDeleteAll.js'
 import { clock } from './helpers/clock.js'
 import { handleConfirmDeleteAiiTasks } from './modules/handleConfirmDeleteAiiTasks.js'
-import { handleCanselDeleteAllTask } from './modules/handleCanselDeleteAllTask.js'
+import { handleCanselDeleteAllTask, handleCanselMoveTask } from './modules/handleCanselDeleteAllTask.js'
 import { handleMoveElementTask } from './modules/handleMoveElementTask.js'
 
 const clockElement = $('#clock')
@@ -42,7 +42,7 @@ popupCanselCreateElement.addEventListener('click', () => toggleActiveClass(popup
 popupConfirmCreateElement.addEventListener('click', handleCreateTask)
 popupWarningDeleteAllElement.addEventListener('click', handleCanselDeleteAllTask)
 popupWarningDeleteAllElement.addEventListener('click', handleConfirmDeleteAiiTasks)
-popupWarningMoveElement.addEventListener('click', handleCanselDeleteAllTask)
+popupWarningMoveElement.addEventListener('click', handleCanselMoveTask)
 popupWarningMoveElement.addEventListener('click', handleMoveElementTask)
 window.addEventListener('beforeunload', handleSaveStorage)
 

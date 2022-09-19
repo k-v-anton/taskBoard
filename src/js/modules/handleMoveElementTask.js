@@ -1,6 +1,6 @@
 import { tasks } from '../helpers/data.js'
 import { renderTasks } from '../helpers/renderTasks.js'
-import { changeBoard } from '../helpers/changeBoard.js'
+import { changeBoard } from '../helpers/appendTaskInBoard.js'
 import { toggleActiveClass } from '../helpers/toggleActiveClass.js'
 
 function handleMoveElementTask(event) {

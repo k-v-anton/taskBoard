@@ -38,9 +38,6 @@ $title-shadow: 1px 1px white, 2px 2px tomato;
     font-size: $title-size;
     display: inline-block;
     text-transform: uppercase;
-    text-shadow:
-        1px 1px white,
-        2px 2px #777;
     color: $task-text-color;
     transition: text-shadow 0.5s linear,
         color 0.5s linear;

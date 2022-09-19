@@ -6,6 +6,12 @@ $clock-shadow: 0px 1px 2px 2px rgba(37, 129, 199, 0.6);
 $clock-border-radius: 5px;
 $clock-text-color: #008080;
 $main-padding: 10px 20px;
+$logo-shadow: 0px 0px 8px 9px rgba(34, 60, 80, 0.2) inset;
+$logo-padding: 5px 10px;
+$logo-border: 3px solid transparent;
+$logo-text-size: 25px;
+$logo-border-gradient: linear-gradient(135deg, #ca0808 20%, #4512bc 70%);
+$logo-text-gradient: linear-gradient(135deg, #4512bc 20%, #ca0808 70%);
 
 .header {
     display: flex;
@@ -15,6 +21,21 @@ $main-padding: 10px 20px;
     padding: $header-padding;
     background: $header-bg-color;
     box-shadow: $header-shadow;
+
+    &__logo {
+        font-weight: 700;
+        font-family: 'Orbitron';
+        font-size: $logo-text-size;
+        background: $logo-text-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        padding: $logo-padding;
+        border: $logo-border;
+        border-image: $logo-border-gradient;
+        border-image-slice: 1;
+        box-shadow: $logo-shadow;
+    }
 
     &__clock {
         padding: $clock-paddings;

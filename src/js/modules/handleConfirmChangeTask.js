@@ -5,6 +5,7 @@ import { toggleActiveClass } from '../helpers/toggleActiveClass.js'
 
 function handleConfirmChangeTask(event) {
     event.preventDefault()
+    
     const taskChangeId = $('.input__hiden').value
     const popupElement = $('#popupChange')
 
