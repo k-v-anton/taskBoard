@@ -21,7 +21,6 @@ function handleEditTask() {
 }
 
 function changeTaskEnterUser(task) {
-    // debugger
     const user = task.querySelector('.task__implementer').textContent
     const users = $('#popupChange').querySelectorAll('.popup__drop-menu-user')
 

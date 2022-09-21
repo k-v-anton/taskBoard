@@ -1,17 +1,18 @@
+import { startPage, handleSaveStorage } from './modules/handleLoadApp.js'
 import { handleCreateTask } from './modules/handleCreateTask.js'
 import { toggleActiveClass } from './helpers/toggleActiveClass.js'
 import { $ } from './helpers/selector.js'
-import { startPage } from './helpers/startPage.js'
-import { handleSaveStorage } from './modules/handleSaveStorage.js'
-import { handleDeleteSelectedTask } from './modules/handleDeleteSelectedTask.js'
 import { handleEditTask } from './modules/handleEditTask.js'
 import { handleConfirmChangeTask } from './modules/handleConfirmChangeTask.js'
-import { handleMoveTask } from './modules/handleMoveTask.js'
-import { handleDeleteAll } from './modules/handleDeleteAll.js'
+import { handleMoveTask, handleMoveElementTask as handleWarningMoveTask } from './modules/handleMoveTask.js'
 import { clock } from './helpers/clock.js'
-import { handleConfirmDeleteAiiTasks } from './modules/handleConfirmDeleteAiiTasks.js'
-import { handleCanselDeleteAllTask, handleCanselMoveTask } from './modules/handleCanselDeleteAllTask.js'
-import { handleMoveElementTask } from './modules/handleMoveElementTask.js'
+import { handleConfirmDeleteAiiTasks } from './modules/handleConfirmDeleteAllTasks.js'
+import {
+    handleCanselDeleteAllTask,
+    handleCanselMoveTask,
+    handleDeleteAll,
+    handleDeleteSelectedTask
+} from './modules/handleDelete.js'
 
 const clockElement = $('#clock')
 const addTodoElement = $('#addTodo')
@@ -43,7 +44,7 @@ popupConfirmCreateElement.addEventListener('click', handleCreateTask)
 popupWarningDeleteAllElement.addEventListener('click', handleCanselDeleteAllTask)
 popupWarningDeleteAllElement.addEventListener('click', handleConfirmDeleteAiiTasks)
 popupWarningMoveElement.addEventListener('click', handleCanselMoveTask)
-popupWarningMoveElement.addEventListener('click', handleMoveElementTask)
+popupWarningMoveElement.addEventListener('click', handleWarningMoveTask)
 window.addEventListener('beforeunload', handleSaveStorage)
 
 setInterval(() => clockElement.textContent = clock(), 1000)
