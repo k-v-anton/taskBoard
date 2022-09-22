@@ -1,8 +1,10 @@
 import { colorFonTask } from './colorFonTask.js'
 import { $ } from './selector.js'
 import { tasks } from './data.js'
+import { toggleActiveClass } from './toggleActiveClass.js'
+import { counterTasks } from './counterTasks.js'
 
-function dragTodo(event) {
+function handleDragTodo(event) {
     const task = event.target.closest('.task')
     const progressCardsElement = $('#progressCards')
 
@@ -15,7 +17,7 @@ function dragTodo(event) {
     progressCardsElement.addEventListener('drop', drop)
 }
 
-function dragProgress(event) {
+function handleDragProgress(event) {
     const task = event.target.closest('.task')
     const todoCardsElement = $('#todoCards')
     const doneCardsElement = $('#doneCards')
@@ -39,17 +41,27 @@ function drop(event) {
         if (element.id == taskId &&
             element.board == 1 &&
             event.target.closest('#progressCards')) {
-            element.board = 2
+            const boardMove = $('#progressCards')
+            const counterTask = boardMove.querySelectorAll('.task').length
+            if (counterTask < 6) {
+                element.board = 2
 
-            task.querySelector('.task__edit').textContent = 'back'
-            task.querySelector('.task__delete').textContent = 'complited'
-            task.querySelector('.task__move').setAttribute('style', 'display: none')
+                task.querySelector('.task__edit').textContent = 'back'
+                task.querySelector('.task__delete').textContent = 'complited'
+                task.querySelector('.task__move').setAttribute('style', 'display: none')
 
-            colorFonTask(element, task)
+                colorFonTask(element, task)
 
-            event.target.closest('#progressCards').append(
-                task
-            )
+                event.target.closest('#progressCards').append(
+                    task
+                )
+
+                counterTasks($('#boardTodo'))
+                counterTasks($('#boardInProgress'))
+            } else {
+                const popupWarning = $('#popupWarningMove')
+                toggleActiveClass(popupWarning)
+            }
         }
 
         if (element.id == taskId &&
@@ -68,6 +80,9 @@ function drop(event) {
             dropInElement.append(
                 task
             )
+
+            counterTasks($('#boardTodo'))
+            counterTasks($('#boardInProgress'))
         }
 
         if (element.id == taskId &&
@@ -86,6 +101,9 @@ function drop(event) {
             dropInElement.append(
                 task
             )
+
+            counterTasks($('#boardInProgress'))
+            counterTasks($('#boardDone'))
         }
     })
 }
@@ -94,4 +112,4 @@ function preventDefault(event) {
     event.preventDefault()
 }
 
-export { dragTodo, dragProgress }
+export { handleDragTodo, handleDragProgress }

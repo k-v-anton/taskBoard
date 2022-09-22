@@ -8,50 +8,37 @@ function handleMoveTask(event) {
     event.preventDefault()
 
     const eT = event.target
-    const popupWarning = $('#popupWarningMove')
+    const task = eT.closest('.task')
 
-    if (eT.textContent === '>' ||
-        eT.textContent.toUpperCase() === 'COMPLITED' ||
-        eT.textContent.toUpperCase() === 'BACK') {
-        const inpHiddenId = popupWarning.querySelector('.popup-warning-input-hiden-id')
-        const inpHiddenEt = popupWarning.querySelector('.popup-warning-input-hiden-et')
-
-        inpHiddenId.setAttribute('value', `${eT.closest('.task').id}`)
-        inpHiddenEt.setAttribute('value', `${eT.textContent}`)
-
-        toggleActiveClass(popupWarning)
-    }
-}
-
-function handleWarningMoveTask(event) {
-    event.preventDefault()
-
-    const eT = event.target
-    const popupWarningMoveElement = eT.closest('.popup-warning')
-    const taskId = popupWarningMoveElement.querySelector('.popup-warning-input-hiden-id').value
-    const [task] = tasks.filter(element => element.id == taskId)
-    const taskContentTarget = popupWarningMoveElement.querySelector('.popup-warning-input-hiden-et').value
-
-    if (eT.textContent.toUpperCase() === 'CONFIRM') {
-        switch (true) {
-            case taskContentTarget === '>':
+    switch (true) {
+        case eT.textContent === '>':
+            const boardMove = $('#progressCards')
+            const counterTask = boardMove.querySelectorAll('.task').length
+            if (counterTask < 6) {
                 changeBoard(tasks, task, true)
-                break
+            } else {
+                const popupWarningMove = $('#popupWarningMove')
+                const inputHidden = popupWarningMove.querySelector('.popup-warning-input-hiden-id')
+                inputHidden.setAttribute('value', task.id)
 
-            case taskContentTarget.toUpperCase() === 'COMPLITED':
-                changeBoard(tasks, task, true)
-                break
-
-            case taskContentTarget.toUpperCase() === 'BACK':
-                changeBoard(tasks, task, false)
-                break
-
-            default:
-                break
-        }
+                toggleActiveClass(popupWarningMove)
+            }
+            break
+        case eT.textContent.toUpperCase() === 'COMPLITED':
+            changeBoard(tasks, task, true)
+            break
+        case eT.textContent.toUpperCase() === 'BACK':
+            changeBoard(tasks, task, false)
+            break
     }
-    toggleActiveClass(popupWarningMoveElement)
     renderTasks(tasks)
 }
 
-export { handleMoveTask, handleWarningMoveTask as handleMoveElementTask }
+function handleCanselWarning(element) {
+    event.preventDefault()
+    if (event.target.textContent.toLowerCase() == 'cancel') {
+        toggleActiveClass(event.target.closest(element))
+    }
+}
+
+export { handleMoveTask, handleCanselWarning }

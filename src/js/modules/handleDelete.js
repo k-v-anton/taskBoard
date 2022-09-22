@@ -3,22 +3,6 @@ import { toggleActiveClass } from '../helpers/toggleActiveClass.js'
 import { tasks } from '../helpers/data.js'
 import { renderTasks } from '../helpers/renderTasks.js'
 
-function handleCanselDeleteAllTask(event) {
-    event.preventDefault()
-
-    if (event.target.textContent.toUpperCase() == 'CANCEL') {
-        toggleActiveClass(event.target.closest('#popupWarningDeleteAll'))
-    }
-}
-
-function handleCanselMoveTask(event) {
-    event.preventDefault()
-
-    if (event.target.textContent.toLowerCase() == 'cancel') {
-        toggleActiveClass(event.target)
-    }
-}
-
 function handleDeleteAll(event) {
     event.preventDefault()
 
@@ -47,8 +31,6 @@ function handleDeleteSelectedTask(event) {
 }
 
 export {
-    handleCanselDeleteAllTask,
-    handleCanselMoveTask,
     handleDeleteAll,
     handleDeleteSelectedTask
 }

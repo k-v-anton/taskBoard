@@ -3,7 +3,7 @@ import { renderTasks } from '../helpers/renderTasks.js'
 import { toggleActiveClass } from '../helpers/toggleActiveClass.js'
 import { $ } from '../helpers/selector.js'
 
-function handleConfirmDeleteAiiTasks(event) {
+function handleConfirmDeleteAllTasks(event) {
     event.preventDefault()
 
     const popupWarning = $('#popupWarningDeleteAll')
@@ -20,4 +20,4 @@ function handleConfirmDeleteAiiTasks(event) {
     renderTasks(tasks)
 }
 
-export { handleConfirmDeleteAiiTasks }
+export { handleConfirmDeleteAllTasks }
