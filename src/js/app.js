@@ -3,7 +3,7 @@ import { handleCreateTask } from './modules/handleCreateTask.js'
 import { toggleActiveClass } from './helpers/toggleActiveClass.js'
 import { handleDragTodo, handleDragProgress } from './helpers/dragAndDrop.js'
 import { $ } from './helpers/selector.js'
-import { Clock } from './helpers/clock.js'
+import { Clock } from './class/Clock.js'
 import { handleEditTask } from './modules/handleEditTask.js'
 import { handleConfirmChangeTask } from './modules/handleConfirmChangeTask.js'
 import { handleMoveTask, handleCanselWarning } from './modules/handleMoveTask.js'
@@ -31,7 +31,6 @@ addTodoElement.addEventListener('click', () => toggleActiveClass(popupCreateElem
 deleteAllElement.addEventListener('click', handleDeleteAll)
 todoCardsElement.addEventListener('click', handleDeleteSelectedTask)
 todoCardsElement.addEventListener('click', handleEditTask)
-
 doneCardsElement.addEventListener('click', handleDeleteSelectedTask)
 popupCanselChangeElement.addEventListener('click', () => toggleActiveClass(popupChangeElement))
 popupConfirmlChangeElement.addEventListener('click', handleConfirmChangeTask)
@@ -41,15 +40,11 @@ popupWarningDeleteAllElement.addEventListener('click', () => handleCanselWarning
 popupWarningDeleteAllElement.addEventListener('click', handleConfirmDeleteAllTasks)
 todoCardsElement.addEventListener('mousedown', handleDragTodo)
 progressCardsElement.addEventListener('mousedown', handleDragProgress)
-
 todoCardsElement.addEventListener('click', handleMoveTask)
 progressCardsElement.addEventListener('click', handleMoveTask)
 popupWarningMoveElement.addEventListener('click', () => handleCanselWarning('#popupWarningMove'))
 popupWarningMoveElement.addEventListener('click', handleConfirmWarningMove)
-
 window.addEventListener('beforeunload', handleSaveStorage)
-
-// setInterval(() => clockElement.textContent = clock(), 1000)
 
 setInterval(() => {
     const clock = new Clock()
