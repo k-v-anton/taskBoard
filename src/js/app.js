@@ -3,7 +3,7 @@ import { handleCreateTask } from './modules/handleCreateTask.js'
 import { toggleActiveClass } from './helpers/toggleActiveClass.js'
 import { handleDragTodo, handleDragProgress } from './helpers/dragAndDrop.js'
 import { $ } from './helpers/selector.js'
-import { clock } from './helpers/clock.js'
+import { Clock } from './helpers/clock.js'
 import { handleEditTask } from './modules/handleEditTask.js'
 import { handleConfirmChangeTask } from './modules/handleConfirmChangeTask.js'
 import { handleMoveTask, handleCanselWarning } from './modules/handleMoveTask.js'
@@ -49,4 +49,9 @@ popupWarningMoveElement.addEventListener('click', handleConfirmWarningMove)
 
 window.addEventListener('beforeunload', handleSaveStorage)
 
-setInterval(() => clockElement.textContent = clock(), 1000)
+// setInterval(() => clockElement.textContent = clock(), 1000)
+
+setInterval(() => {
+    const clock = new Clock()
+    clockElement.textContent = clock.getClock()
+}, 1000)
