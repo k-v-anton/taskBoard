@@ -68,6 +68,8 @@ $title-shadow: 1px 1px white, 2px 2px tomato;
 
 .task__implementer {
     flex: 1;
+    text-transform: capitalize;
+    font-weight: 700;
 }
 
 .task__timecreate {
